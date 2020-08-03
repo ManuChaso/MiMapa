@@ -1,7 +1,7 @@
 import React from 'react';
 import './map.css';
 import GoogleMapReact from 'google-map-react';
-import Credentials from '../../credentials';
+import {Credentials} from '../../credentials';
 
 const Map = (props)=>{
 
