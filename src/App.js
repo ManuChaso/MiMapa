@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
+import Navigator from './components/navigator/navigator';
 function App() {
+  const [screen, setScreen] = useState("map");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="nav">
+        <button onClick={()=> setScreen("map")} className="navButton">Mapa</button>
+        <button onClick={()=> setScreen("pointslist")} className="navButton">Mis puntos</button>
+        <button onClick={()=> setScreen("createpoint")} className="navButton">Crear punto</button>
+      </div>
+      <Navigator screen={screen}/>
     </div>
   );
 }
